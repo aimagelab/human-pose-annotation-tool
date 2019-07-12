@@ -4,6 +4,8 @@
 We aim to create a simple yet effective tool for create and modify annotation for Body Pose Estimation over depth images.
 The vast majority of available datasets are not precisely noted, usually annotations are obtained using the [Kinect SDK](https://www.microsoft.com/en-us/research/project/human-pose-estimation-for-kinect/ "Microsoft Page"), which is supposed to works in a limited environment, returning incorrect annotation for general case-of-use.
 
+![Example image_4](https://github.com/aimagelab/human-pose-annotation-tool/blob/master/img/example_4.png)
+
 Our tool takes into account pre-existing annotations, plotting Body Joints over depth frames, for using such informations as a starting point. The RGB frame is also shown, to allow an easier reference.
 
 ## Getting Started
