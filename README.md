@@ -60,16 +60,10 @@ python Noter.py --data_dir <path_to_dataset> --out <optional> --k <optional> --n
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+* **Andrea D'Eusanio** - [Deusy94](https://github.com/Deusy94) - andrea.deusanio@unimore.it
+* **Stefano Pini** - [Stefano](https://github.com/stefanopini) - stefano.pini@unimore.it
+* **Guido Borghi** - [Gdburg](https://github.com/gdubrg) - guido.borghi@unimore.it
 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
