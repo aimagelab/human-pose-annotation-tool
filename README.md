@@ -1,4 +1,5 @@
 <h1 align="center">Human Pose Annotation Tool</h1>
+
 ![Example image_1](https://github.com/aimagelab/human-pose-annotation-tool/blob/master/img/example_1.png)
 
 We aim to create a simple yet effective tool for create and modify annotation for Body Pose Estimation over depth images.
