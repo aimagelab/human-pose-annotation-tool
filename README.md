@@ -52,11 +52,11 @@ With little code modification you can change the tool to work with only RGB or o
 python Noter.py --data_dir <path_to_dataset> --out <optional> --k <optional> --next <optional>  
                 --scale <optional> --radius <optional> --split <optional>
 ```
--`--out`, putput name file. Default: "good_annotations".
--`--k`, choose if you want to resume annotations from the file specified in `--k` flag, enter "skip" for resume or "keep" for restarting from frame 1.
--`--next`, choose how many frame you want to skip after everyone you note down.
--`--scale` & -`--radius`, choose the dimension of images and keypoint visualization in the plot.
--`--split`, additional parameter for custom datasets.
+- `--out`, putput name file. Default: "good_annotations".
+- `--k`, choose if you want to resume annotations from the file specified in `--k` flag, enter "skip" for resume or "keep" for restarting from frame 1.
+- `--next`, choose how many frame you want to skip after everyone you note down.
+- `--scale` & -`--radius`, choose the dimension of images and keypoint visualization in the plot.
+- `--split`, additional parameter for custom datasets.
 
 ## Authors
 
