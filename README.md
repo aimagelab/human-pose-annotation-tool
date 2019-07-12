@@ -1,5 +1,5 @@
 # Human Pose Annotation Tool
-![Example image_1](https://github.com/aimagelab/human-pose-annotation-tool/img/example_1.png)
+![Example image_1](https://github.com/aimagelab/human-pose-annotation-tool/blob/master/img/example_1.png)
 
 We aim to create a simple yet effective tool for create and modify annotation for Body Pose Estimation over depth images.
 The vast majority of available datasets are not precisely noted, usually annotations are obtained using the [Kinect SDK](https://www.microsoft.com/en-us/research/project/human-pose-estimation-for-kinect/ "Microsoft Page"), which is supposed to works in a limited environment, returning incorrect annotation for general case-of-use.
