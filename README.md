@@ -25,30 +25,15 @@ pip install scipy
 
 For running our test and to use our code without modifying a line, install PyTorch to use Dataset class.
 ```
-pip instal pytorch
+pip install pytorch
 ```
-
-### Installing
-
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
-```
-python
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
 
 ## Running the tests
 
-Explain how to run the automated tests for this system
+To run the simple test, just execute:
+```
+python Noter.py --data_dir ./test
+```
 
 ### Break down into end to end tests
 
