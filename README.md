@@ -9,11 +9,9 @@ The vast majority of available datasets are not precisely noted, usually annotat
 Our tool takes into account pre-existing annotations, plotting Body Joints over depth frames, for using such informations as a starting point. The RGB frame is also shown, to allow an easier reference.
 
 ## Getting Started
-
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. There's not much to do, just install prerequisites and download all the files.
 
 ### Prerequisites
-
 Things you need to install to run the tool:
 
 ```
@@ -29,45 +27,21 @@ pip install pytorch
 ```
 
 ## Running the tests
-
 To run the simple test, just execute:
 ```
 python Noter.py --data_dir ./test
 ```
+This will open up one sequence of the [Watch-N-Patch](http://watchnpatch.cs.cornell.edu/ "WnP Page") dataset, in which the 2 frames shown above came from. The sequence is stored in the test directory.
 
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
-
-## Built With
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+## Features
+- **Functionality**
+  - **Move Joints**
+  - **Delete Joints**
+  - **Add not noted Joints**
+  - **Reset action**
+- **Input**
+- **Output**
+- **OS**
 
 ## Authors
 
