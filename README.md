@@ -17,7 +17,15 @@ These instructions will get you a copy of the project up and running on your loc
 Things you need to install to run the tool:
 
 ```
-Give examples
+Python >= 3.6.7
+pip install numpy
+pip install opencv-python
+pip install scipy
+```
+
+For running our test and to use our code without modifying a line, install PyTorch to use Dataset class.
+```
+pip instal pytorch
 ```
 
 ### Installing
@@ -27,7 +35,7 @@ A step by step series of examples that tell you how to get a development env run
 Say what the step will be
 
 ```
-Give the example
+python
 ```
 
 And repeat
