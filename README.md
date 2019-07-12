@@ -10,11 +10,11 @@ Our tool takes into account pre-existing annotations, plotting Body Joints over 
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. There's not much to do, just install prerequisites and download all the files.
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
+Things you need to install to run the tool:
 
 ```
 Give examples
