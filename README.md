@@ -1,7 +1,9 @@
 # Human Pose Annotation Tool
 
 We aim to create a simple yet effective tool for create and modify annotation for Body Pose Estimation over depth images.
-The vast majority of available datasets are not precisely noted, usualy annotations are obtained using the [Kinect SDK](https://www.microsoft.com/en-us/research/project/human-pose-estimation-for-kinect/ "Microsoft Page"). 
+The vast majority of available datasets are not precisely noted, usually annotations are obtained using the [Kinect SDK](https://www.microsoft.com/en-us/research/project/human-pose-estimation-for-kinect/ "Microsoft Page"), which is supposed to works in a limited environment, returning incorrect annotation for general case-of-use.
+
+Our tool takes into account pre-existing annotations, plotting Body Joints over depth frames, for using such informations as a starting point. The RGB frame is also shown, to allow an easier reference.
 
 ## Getting Started
 
