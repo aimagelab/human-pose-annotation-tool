@@ -7,6 +7,7 @@ The vast majority of available datasets are not precisely noted, usually annotat
 ![Example image_4](https://github.com/aimagelab/human-pose-annotation-tool/blob/master/img/example_4.png)
 
 Our tool takes into account pre-existing annotations, plotting Body Joints over depth frames, for using such informations as a starting point. The RGB frame is also shown, to allow an easier reference.
+We noted down 3329 frames from watch-n-patch for our Body Pose Estimation CNN, annotations are available [here](http://imagelab.ing.unimore.it/depthbodypose).
 
 ## Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. There's not much to do, just install prerequisites and download all the files.
