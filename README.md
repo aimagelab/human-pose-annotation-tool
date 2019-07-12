@@ -1,6 +1,7 @@
-# Project Title
+# Human Pose Annotation Tool
 
-One Paragraph of project description goes here
+We aim to create a simple yet effective tool for create and modify annotation for Body Pose Estimation over depth images.
+The vast majority of available datasets are not precisely noted, usualy annotations are obtained using the [Kinect SDK] (https://www.microsoft.com/en-us/research/project/human-pose-estimation-for-kinect/). 
 
 ## Getting Started
 
