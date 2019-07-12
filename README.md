@@ -34,14 +34,29 @@ python Noter.py --data_dir ./test
 This will open up one sequence of the [Watch-N-Patch](http://watchnpatch.cs.cornell.edu/ "WnP Page") dataset, in which the 2 frames shown above came from. The sequence is stored in the test directory.
 
 ## Features
-- **Functionality**
-  - **Move Joints**
-  - **Delete Joints**
-  - **Add not noted Joints**
-  - **Reset action**
-- **Input**
-- **Output**
-- **OS**
+- **Functionality**, shown in the tkinter menu.
+  - **Move Joints**, click the joint you want to move, click the new position, press "y" to confirm.
+  - **Delete Joints**, click the joint, press "esc" and confirm with "y".
+  - **Add not noted Joints**. press "a", choose the joint you want to add, choose position and press "y" to confirm.
+  - **Reset action**, after an action, press "esc" to reset.
+  - **Save frame**, press "enter" to save and change frame.
+  - **Skip sequence**, press "p" to skip the entire sequence.
+- **Input**, as default we used a PyTorch dataset wich return depth maps and keypoints value of the Watch-N-Patch Dataset. 
+For custom use you need to redifine the Dataset class and load the correct RGB and Depth Images.
+With little code modification you can change the tool to work with only RGB or only Depth frames.
+- **Output**, JSON file containing image path as key and keypoints array as value.
+- **OS**, tested on Windows and Linux OS.
+
+## Usage
+```
+python Noter.py --data_dir <path_to_dataset> --out <optional> --k <optional> --next <optional>  
+                --scale <optional> --radius <optional> --split <optional>
+```
+-`--out`, putput name file. Default: "good_annotations".
+-`--k`, choose if you want to resume annotations from the file specified in `--k` flag, enter "skip" for resume or "keep" for restarting from frame 1.
+-`--next`, choose how many frame you want to skip after everyone you note down.
+-`--scale` & -`--radius`, choose the dimension of images and keypoint visualization in the plot.
+-`--split`, additional parameter for custom datasets.
 
 ## Authors
 
