@@ -27,9 +27,9 @@ pip install pytorch
 ```
 
 ## Running the tests
-To run the simple test, just execute:
+To run the simple test, unzip the archive inside the test folder, then execute:
 ```
-python Noter.py --data_dir ./test
+python src/Noter.py --data_dir ./test
 ```
 This will open up one sequence of the [Watch-N-Patch](http://watchnpatch.cs.cornell.edu/ "WnP Page") dataset, in which the 2 frames shown above came from. The sequence is stored in the test directory.
 
