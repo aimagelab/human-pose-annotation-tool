@@ -3,6 +3,7 @@ import numpy as np
 import watch_n_patch
 import scipy
 from torch.utils.data import Dataset
+import cv2
 
 PATCH = 'watch_n_patch'
 
@@ -54,8 +55,10 @@ class ComposedDataset(Dataset):
 
     def __getitem__(self, idx):
         name = list(self.joints.keys())[idx]
+        name_rgb = name.replace(name[name.find("."):], ".jpg").replace("depth", "rgbjpg")
 
         img = scipy.io.loadmat(name)['depth']
+        img_rgb = cv2.imread(name_rgb)
 
         arr = np.array(img)
         tmp = np.zeros((arr.shape[0], arr.shape[1], 3))
@@ -68,4 +71,7 @@ class ComposedDataset(Dataset):
         kpts = np.array(kpts)
         kpts = kpts[np.newaxis, :]
 
-        return img, kpts, name
+        img = img * 255 / np.amax(img)
+        img = img.astype(np.uint8)
+
+        return [img, img_rgb], kpts, [name, name_rgb]

@@ -1,6 +1,7 @@
-from Datasets import ComposedDataset
+from src.Datasets import ComposedDataset
+from src.RGB_Dataset import ComposedDataset as RGB_Dataset
 import numpy as np
-from watch_n_patch import WATCH_N_PATCH_JOINTS
+from src.watch_n_patch import WATCH_N_PATCH_JOINTS
 import json
 import os
 import cv2
@@ -91,7 +92,11 @@ class Noter:
         # Starting function
         self.master.update()
         next_name = None
-        for i, (img, kpts, name) in enumerate(self.dataset):
+        for i, (imgs, kpts, names) in enumerate(self.dataset):
+            if isinstance(names, list):
+                name = names[0]
+            else:
+                name = names
             if name in self.json_dict:
                 if skip_or_keep == "keep":
                     kpts = np.array(self.json_dict[name])
@@ -128,26 +133,29 @@ class Noter:
             self.status.set(f"[{curr_seq}] di [{seq}]")
             self.master.update()
 
-            rgb_name = name.split(self.slash)
-            if name.split('.')[-1] == 'png':
-                rgb_name[-2] = 'RGB'
-                last_split = rgb_name[-1].split('_')
-                last_split[-1] = 'RGB.png'
-                rgb_name[-1] = "_".join(last_split)
-                rgb_name = self.slash.join(rgb_name)
-            if name.split('.')[-1] == 'mat':
-                rgb_name[-2] = 'rgbjpg'
-                last_split = rgb_name[-1].split('.')
-                last_split[-1] = 'jpg'
-                rgb_name[-1] = ".".join(last_split)
-                rgb_name = self.slash.join(rgb_name)
+            # rgb_name = name.split(self.slash)
+            # if name.split('.')[-1] == 'png':
+            #     rgb_name[-2] = 'RGB'
+            #     last_split = rgb_name[-1].split('_')
+            #     last_split[-1] = 'RGB.png'
+            #     rgb_name[-1] = "_".join(last_split)
+            #     rgb_name = self.slash.join(rgb_name)
+            # if name.split('.')[-1] == 'mat':
+            #     rgb_name[-2] = 'rgbjpg'
+            #     last_split = rgb_name[-1].split('.')
+            #     last_split[-1] = 'jpg'
+            #     rgb_name[-1] = ".".join(last_split)
+            #     rgb_name = self.slash.join(rgb_name)
 
-            rgb = cv2.imread(rgb_name)
-            rgb = cv2.resize(rgb, None, fx=0.4, fy=0.4, interpolation=cv2.INTER_CUBIC)
-
-            img = img * 255 / np.amax(img)
-            img = img.astype(np.uint8)
-
+            new_imgs = list()
+            if isinstance(imgs, list):
+                img = imgs[0]
+                for index, new_img in enumerate(imgs[1:]):
+                    new_imgs.append(cv2.resize(new_img, None, fx=0.4, fy=0.4, interpolation=cv2.INTER_CUBIC))
+                    cv2.namedWindow(names[index + 1])
+                    cv2.moveWindow(names[index + 1], 750, 300)
+            else:
+                img = imgs
             img, kpts = self.upscale(img, kpts)
 
             tmp = img.astype(np.uint8).copy()
@@ -155,13 +163,13 @@ class Noter:
 
             self.draw_kpts(tmp, kpts, self.radius)
             cv2.namedWindow(name)
-            cv2.namedWindow(rgb_name)
-            cv2.moveWindow(rgb_name, 750, 300)
             cv2.moveWindow(name, 15, 150)
             cv2.setMouseCallback(name, self.click_left, [name, tmp, kpts])
 
             while True:
-                cv2.imshow(rgb_name, rgb)
+                if len(new_imgs) > 0:
+                    for new_name, el in zip(names[1:], new_imgs):
+                        cv2.imshow(new_name, el)
                 cv2.imshow(name, tmp)
                 key = cv2.waitKey(1) & 0xFF
 
