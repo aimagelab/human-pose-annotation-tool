@@ -114,23 +114,27 @@ class Noter:
                     next_name = None
                     cv2.destroyAllWindows()
                 else:
-                    seq = len(os.listdir(self.slash.join(name.split(self.slash)[:-1])))
-                    curr_seq = int(name.split(self.slash)[-1].split(".")[-2])
-                    self.status.set(f"[{curr_seq}] di [{seq}]")
+                    tmp = os.listdir(self.slash.join(name.split(self.slash)[:-1]))
+                    seq = len(tmp)
+                    curr_seq = int(name.split(self.slash)[-1].split(".")[-2]) - \
+                               int(tmp[0].split(".")[-2]) + 1
+                    self.status.set(f"Frame [{curr_seq}] of [{seq}]")
                     self.progressbar["value"] = curr_seq
                     self.progressbar["maximum"] = seq
                     self.master.update()
                     continue
 
-            seq = len(os.listdir(self.slash.join(name.split(self.slash)[:-1])))
-            curr_seq = int(name.split(self.slash)[-1].split(".")[-2])
+            tmp = os.listdir(self.slash.join(name.split(self.slash)[:-1]))
+            seq = len(tmp)
+            curr_seq = int(name.split(self.slash)[-1].split(".")[-2]) - \
+                       int(tmp[0].split(".")[-2]) + 1
 
             if (curr_seq - 1) % self.next_skip != 0:
                 continue
 
             self.progressbar["value"] = curr_seq
             self.progressbar["maximum"] = seq
-            self.status.set(f"[{curr_seq}] di [{seq}]")
+            self.status.set(f"Frame [{curr_seq}] di [{seq}]")
             self.master.update()
 
             # rgb_name = name.split(self.slash)
