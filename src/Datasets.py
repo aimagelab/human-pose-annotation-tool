@@ -24,6 +24,7 @@ class ComposedDataset(Dataset):
         self.root_dir = root_dir
         self.P_ID = list()
         self.joints = dict()
+        self.splits = list()
 
         # Load Watch-n-patch
         print("Loading Watch-n-patch...")
@@ -55,7 +56,7 @@ class ComposedDataset(Dataset):
 
     def __getitem__(self, idx):
         name = list(self.joints.keys())[idx]
-        name_rgb = name.replace(name[name.find("."):], ".jpg").replace("depth", "rgbjpg")
+        name_rgb = name.replace(name[name.find(".mat"):], ".jpg").replace("depth", "rgbjpg")
 
         img = scipy.io.loadmat(name)['depth']
         img_rgb = cv2.imread(name_rgb)
