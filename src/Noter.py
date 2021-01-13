@@ -25,6 +25,15 @@ JOINTS_COLOR = [(255, 0, 0), (244, 41, 0), (234, 78, 0), (223, 112, 0),
                 (114, 170, 0), (80, 160, 0), (50, 149, 0), (23, 139, 0),
                 (244, 41, 0)]
 
+DEFAULT_KPT = [[[258.5, 179.5], [258.5, 135.], [255.5, 87.5], [255.5, 71.5],
+                [282.5, 100.], [287., 131.5], [286., 161.5], [286., 167.],
+                [229., 101.], [227.5, 136.], [230., 168.], [231.5, 173.],
+                [278., 181.], [280.5, 231.], [280., 273.5], [282.5, 281.5],
+                [239., 182.], [242., 232.5], [244., 275.5], [240., 286.],
+                [255.5, 95.5], [322.56, 134.68], [326.76, 131.6], [324.24, 133.], [318.64, 128.8]]]
+
+
+
 class Noter:
     """
         Main class for the Noter tool
@@ -156,6 +165,9 @@ class Noter:
                     cv2.moveWindow(names[index + 1], 750, 300)
             else:
                 img = imgs
+
+            if kpts is None:
+                kpts = np.array(DEFAULT_KPT).copy()
             img, kpts = self.upscale(img, kpts)
 
             tmp = img.astype(np.uint8).copy()
@@ -375,4 +387,9 @@ if __name__ == "__main__":
 
     n = Noter(ComposedDataset(args['data_dir']), args['out'],
               args['scale'], args['radius'], args['next'])
+    #
+    # issue #4, to use only one source data, you can create a pytorch dataloader that returrn only that specific source
+    # like: Noter(RGB_Dataset(args['data_dir']), args['out'], args['scale'], args['radius'], args['next'])
+    #
+
     n.start(args['keep_or_skip'])

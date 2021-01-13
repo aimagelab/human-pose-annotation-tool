@@ -64,3 +64,6 @@ class ComposedDataset(Dataset):
         kpts = kpts[np.newaxis, :]
 
         return img, kpts * 0.4, name
+
+        # If you have no kpts, remember to return None as second element!
+        # return img, None, name
