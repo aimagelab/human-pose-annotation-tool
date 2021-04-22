@@ -62,9 +62,9 @@ python Noter.py --data_dir <path_to_dataset> --out <optional> --k <optional> --n
 
 ## Authors
 
-* **Andrea D'Eusanio** - [Deusy94](https://github.com/Deusy94) - andrea.deusanio@unimore.it
-* **Stefano Pini** - [Stefano](https://github.com/stefanopini) - stefano.pini@unimore.it
-* **Guido Borghi** - [Gdburg](https://github.com/gdubrg) - guido.borghi@unimore.it
+* **Andrea D'Eusanio** - [Deusy94](https://github.com/Deusy94)
+* **Stefano Pini** - [Stefano](https://github.com/stefanopini)
+* **Guido Borghi** - [Gdburg](https://github.com/gdubrg)
 
 ## License
 

@@ -1,7 +1,7 @@
-from src.Datasets import ComposedDataset
-from src.RGB_Dataset import ComposedDataset as RGB_Dataset
+from Datasets import ComposedDataset
+from RGB_Dataset import ComposedDataset as RGB_Dataset
 import numpy as np
-from src.watch_n_patch import WATCH_N_PATCH_JOINTS
+from watch_n_patch import WATCH_N_PATCH_JOINTS
 import json
 import os
 import cv2
